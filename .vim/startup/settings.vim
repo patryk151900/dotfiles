@@ -7,7 +7,7 @@ set incsearch
 set wildmenu
 syntax enable
 set synmaxcol=0
-set term=xterm-256color	
+set term=xterm-256color
 
 set display=uhex
 set shortmess=aAIsT
@@ -67,8 +67,8 @@ let mapleader='\'
 "  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 "endif
 
+set guifont=Droid\ Sans\ Mono\ for\ Powerline:10
 let g:Powerline_symbols = 'fancy'
-set guifont=Manlo-Powerline1
 "this is for powerline
 "call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 let g:NERDTreeWinSize = 30
@@ -82,14 +82,6 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#show_close_button = 1
 let g:airline#extensions#tabline#close_symbol = 'X'
 let g:airline_theme='powerlineish'
-let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:airline_symbols = {}
-let g:airline_symbols.branch = '⭠'
-let g:airline_symbols.readonly = '⭤'
-let g:airline_symbols.linenr = '⭡'
 let g:airline#extensions#tabline#show_tabs = 1
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
