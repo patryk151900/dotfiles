@@ -1,3 +1,5 @@
 .vim/fonts
 .vim/bundle/*
 .vim/.netrwhist
+*.swp
+
