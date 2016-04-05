@@ -9,6 +9,7 @@ Plugin 'Lokaltog/vim-easymotion'
 "Plugin 'Lokaltog/vim-powerline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
 
 "============== Filetype stuff ===============
 filetype plugin on
