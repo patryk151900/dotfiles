@@ -10,6 +10,11 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'wincent/command-t'
+Plugin 'sjbach/lusty'
+
+
+
 
 "============== Filetype stuff ===============
 filetype plugin on

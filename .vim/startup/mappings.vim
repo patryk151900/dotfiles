@@ -19,8 +19,18 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l>
 nmap <silent> <F3> :NERDTreeToggle<CR>
 
+let mapleader='\'
+
 "show file name
-map <LEADER>f  :echo expand('%:p')<CR>
+map <leader>f  :echo expand('%:p')<CR>
+
+"Lusty buffer
+nmap <leader>B :LustyBufferExplorer<CR>
+nmap <leader>b :LustyBufferGrep<CR>
+
+"Command-T
+
+
 
 "airline mapping
   nmap <leader>1 <Plug>AirlineSelectTab1
