@@ -17,5 +17,3 @@ endfun
 
 
 
-nnoremap <silent> <F6> :call PreviousBuffer()<CR>
-nnoremap <silent> <F7> :call NextBuffer()<CR>

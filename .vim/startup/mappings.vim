@@ -19,6 +19,11 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l>
 nmap <silent> <F3> :NERDTreeToggle<CR>
 
+"cycling through buffers
+no <silent> <C-y> :call PreviousBuffer()<CR>
+no <silent> <C-o> :call NextBuffer()<CR>
+
+" define leader key
 let mapleader='\'
 
 "show file name
@@ -28,8 +33,8 @@ map <leader>f  :echo expand('%:p')<CR>
 nmap <leader>B :LustyBufferExplorer<CR>
 nmap <leader>b :LustyBufferGrep<CR>
 
-"Command-T
-
+"Ack
+nmap <leader>A :Ack <C-r><C-w><CR>
 
 
 "airline mapping
