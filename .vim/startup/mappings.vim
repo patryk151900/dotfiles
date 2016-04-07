@@ -16,8 +16,9 @@ vno <up> <Nop>
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
-map <C-l> <C-W>l>
+map <C-l> <C-W>l
 nmap <silent> <F3> :NERDTreeToggle<CR>
+nmap <silent> <F4> :TagbarToggle<CR>
 
 "cycling through buffers
 no <silent> <C-y> :call PreviousBuffer()<CR>
