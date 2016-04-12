@@ -17,6 +17,7 @@ if &diff
 	set wrap
 endif
 let &scrolloff=999-&scrolloff
+set ignorecase
 set smartcase
 
 set completeopt=menu
