@@ -12,9 +12,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'wincent/command-t'
 Plugin 'sjbach/lusty'
-
-
-
+Plugin 'majutsushi/tagbar'
 
 "============== Filetype stuff ===============
 filetype plugin on
