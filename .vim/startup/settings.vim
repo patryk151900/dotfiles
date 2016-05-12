@@ -17,6 +17,7 @@ if &diff
 	set wrap
 endif
 let &scrolloff=999-&scrolloff
+set ignorecase
 set smartcase
 
 set completeopt=menu
@@ -46,7 +47,7 @@ set ttym=xterm2
 
 set wrap
 set hidden
-set tags=~/.vim/tags/tags
+set tags=./tags;
 "set undo file in oder to avoid loosing undo history when switching buffers
 set undofile
 set undodir=$HOME/.vim/undo
@@ -59,7 +60,6 @@ if version > 720
 	set undodir=~/vimundo/
 endif
 
-let mapleader='\'
 "if exists('$TMUX')
 "  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 "else
