@@ -8,14 +8,6 @@ in case of putty make sure putty host has powerline fonts installed
 check with Character Map if fonts/symbols are installed - check in common -> A0E1 for line number symbol
 in order to see airline symbols in console vim set the right font in terminal settings - from this time you should see new symbols in vim
 do not configure symnols in .vimrc - this is necessary only if you like to replace default symbols
-install ctags by: sudo apt-get install exuberant-ctags
-
-# ctags tags generation
-go into poject root dir
-ctags -R .
-<cursor on tag> + Ctrl+]		- jump to tag definition
-Ctrl+T							- jump back
-vim loops for tags file pointed by tags variable, e.g. set tags=./tags;
 
 # vim compilation from scratch
 sudo apt-get install ruby-dev python-dev
@@ -35,6 +27,16 @@ copen, cclose	- open searched files
 cn, cp			- next, previous
 
 # plugins short manual
+
+## ctags
+install ctags by: sudo apt-get install exuberant-ctags
+
+### ctags tags generation
+go into poject root dir
+ctags -R .
+<cursor on tag> + Ctrl+]		- jump to tag definition
+Ctrl+T							- jump back
+vim loops for tags file pointed by tags variable, e.g. set tags=./tags;
 
 ## ctrlp
 help ctrl-commands	for help (also try :help ctrl-<TAB> for other options
