@@ -26,6 +26,14 @@ grep			- find files
 copen, cclose	- open searched files
 cn, cp			- next, previous
 
+# autocompletion
+Ctrl+p or Ctrl+n in insert mode, hit agani to loop over the list
+Ctrl+x for autocompletion submode
+	] for tag
+	f for file
+	etc.
+
+
 # plugins short manual
 
 ## ctags
