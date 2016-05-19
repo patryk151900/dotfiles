@@ -17,6 +17,7 @@ if &diff
 	set wrap
 endif
 let &scrolloff=999-&scrolloff
+set scrolloff=999
 set ignorecase
 set smartcase
 
@@ -24,6 +25,7 @@ set completeopt=menu
 set mousemodel=popup
 set backspace=2
 set number
+set relativenumber
 set nocompatible
 
 set enc=utf-8
