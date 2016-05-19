@@ -1,7 +1,7 @@
 " Unmap the arrow keys
 no <down> <Nop>
-no <silent> <left> :call PreviousBuffer()<CR> 
-no <silent> <right> :call NextBuffer()<CR> 
+no <left> <Nop>
+no <right> <Nop>
 no <up> <Nop>
 ino <down> <Nop>
 ino <left> <Nop>
@@ -13,10 +13,8 @@ vno <right> <Nop>
 vno <up> <Nop>
 
 "nerd tree operation
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+map <C-h> :call PreviousBuffer()<CR>
+map <C-l> :call NextBuffer()<CR>
 nmap <silent> <F3> :NERDTreeToggle<CR>
 nmap <silent> <F4> :TagbarToggle<CR>
 
