@@ -60,8 +60,10 @@ i	show hidden
 
 ## Ack and ack
 the plugin calls: ack-grep -s -H --nogroup --nocolor --column <what comes after Ack>
-Ack --vim <text>
-Ack --cc <text>
+Ack --vim <text> - searches in .vim files
+Ack --cc <text> - searches in .c .h .xs
+Ack --cpp <text> - searches in .cpp .cc .cxx .m .hpp .hh .h .hxx
+see ack documentation: http://beyondgrep.com/documentation/
 on ubuntu ack is installed as ack-grep (sudo apt-get install ack-grep)
 add: alias ack='ack-grep' to .bashrc
 ack --help types
