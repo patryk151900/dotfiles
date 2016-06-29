@@ -49,7 +49,7 @@ set ttym=xterm2
 
 set wrap
 set hidden
-set tags=./tags;
+set tags=./tags;tags
 "set undo file in oder to avoid loosing undo history when switching buffers
 set undofile
 set undodir=$HOME/.vim/undo
