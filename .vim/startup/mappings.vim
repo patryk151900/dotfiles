@@ -32,7 +32,7 @@ nmap <leader>h :e ~/.vim/readme.md<CR>
 map <leader>f  :echo expand('%:p')<CR>
 
 "comile test
-map <leader><F7> :!./build.sh 2> compile_log.txt<CR>
+map <leader><F7> :!./s/build.sh 2> compile_log.txt<CR>
 map <leader><F8> :!make run<CR>
 map <leader><F9> :!make clean<CR>
 map <leader><F10> :!make<CR>

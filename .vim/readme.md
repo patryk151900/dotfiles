@@ -33,6 +33,20 @@ Ctrl+x for autocompletion submode
 	f for file
 	etc.
 
+# window operations
+C-W			window prefix
+C-Ws		horizontal split
+C-Wv		vertical split
+C-Whjkl		navigation
+
+# vimdiff comparing files
+diffthis	on file to mark file for diff, the same on anoter file
+diffoff		to end diff
+dif			diffupdate - to refresh diff
+[c			previous change
+]c			next change
+do			diffobtain - to pull the change
+dp			diffput - to put the changes
 
 # plugins short manual
 
