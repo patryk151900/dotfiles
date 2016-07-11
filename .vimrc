@@ -13,6 +13,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'wincent/command-t'
 Plugin 'sjbach/lusty'
 Plugin 'majutsushi/tagbar'
+Plugin 'will133/vim-dirdiff'
 
 "============== Filetype stuff ===============
 filetype plugin on
