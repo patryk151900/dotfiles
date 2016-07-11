@@ -48,6 +48,17 @@ dif			diffupdate - to refresh diff
 do			diffobtain - to pull the change
 dp			diffput - to put the changes
 
+# DirDiff - diffing files in folders
+:DirDiff <dir1> <dir2>
+
+# spellcheck
+:set spell spelllang=en_us
+:setlocal spell spelllang=en_us			- only current buffer
+:set nospell							- switch off
+]s										- next misspell
+[s										- previous missspell
+z=										- show suggestion
+
 # plugins short manual
 
 ## ctags
