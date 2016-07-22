@@ -26,7 +26,9 @@ no <silent> <C-o> :call NextBuffer()<CR>
 let mapleader='\'
 
 "display readme.md with hints
-nmap <leader>h :e ~/.vim/readme.md<CR>
+nmap <leader>hv :e ~/.vim/readme.md<CR>
+nmap <leader>hl :e ~/.knowledge/linux.md<CR>
+nmap <leader>hg :e ~/.knowledge/git.md<CR>
 
 "show file name
 map <leader>f  :echo expand('%:p')<CR>

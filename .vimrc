@@ -14,6 +14,7 @@ Plugin 'wincent/command-t'
 Plugin 'sjbach/lusty'
 Plugin 'majutsushi/tagbar'
 Plugin 'will133/vim-dirdiff'
+Plugin 'lambdalisue/vim-pager'
 
 "============== Filetype stuff ===============
 filetype plugin on
