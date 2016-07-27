@@ -1,37 +1,12 @@
-# installation
-* clone dot files repo: git://github/patryk151900/dotfiles
-* link .vim and .vimrc to home: ln -s repos/dotfiles/.vim .vim
-* clone vundle to .vim/bundle/vundle
-* open vim and call :PluginInstall
-* clone powerline fonts and call sudo install.sh
-* in case of putty make sure putty host has powerline fonts installed
-* check with Character Map if fonts/symbols are installed - check in common -> A0E1 for line number symbol
-* in order to see airline symbols in console vim set the right font in terminal settings - from this time you should see new symbols in vim
-* do not configure symnols in .vimrc - this is necessary only if you like to replace default symbols
-
-# vim compilation from scratch
-* sudo apt-get install ruby-dev python-dev
-* git clone https://github.com/vim/vim.git
-* ./configure --disable-nls --enable-multibyte --with-tlib=ncurses --enable-pythoninterp --enable-rubyinterp --with-features=huge --with-python-config-dir=/usr/lib/python2.7/config-i386-linux-gnu
-* hint: path to python config dir is necessary othervise will not compile
-* make -j 3
-* sudo make install
-* hash vim						- when new vim is not visible
-
-# quick getting of rubby and python supported version
-sudo atp-get install vim-nox (this will add rubby support needed for LustyExplorer buffer)
-
-# knowledge cheatsheets installation
-git clone git@bitbucket.org:patryk151900/knowledge.git 
-into .knowledge or make symbolic link to .knowledge from existing repo
-<leader>hv	- opens vim cheatsheet
-<leader>hl	- opens linux cheatsheet
-<leader>hg	- opens git cheatsheet
+# Misc, short
+:set cc=80			- inserts vertical color column
+:help colorcolumn	- see how to change color
+dF					- open file under cursor
 
 # greping files
-* grep			- find files
+* grep				- find files
 * copen, cclose		- open searched files
-* cn, cp		- next, previous
+* cn, cp			- next, previous
 
 # autocompletion
 * Ctrl+p or Ctrl+n in insert mode, hit agani to loop over the list
@@ -55,9 +30,6 @@ into .knowledge or make symbolic link to .knowledge from existing repo
 * do			diffobtain - to pull the change
 * dp			diffput - to put the changes
 
-# DirDiff - diffing files in folders
-:DirDiff <dir1> <dir2>
-
 # spellcheck
 * :set spell spelllang=en_us
 * :setlocal spell spelllang=en_us		- only current buffer
@@ -67,6 +39,9 @@ into .knowledge or make symbolic link to .knowledge from existing repo
 * z=						- show suggestion
 
 # plugins short manual
+
+## DirDiff - diffing files in folders
+:DirDiff <dir1> <dir2>
 
 ## ctags
 install ctags by: sudo apt-get install exuberant-ctags
@@ -116,3 +91,34 @@ PluginInstall		- installs a plugin when added to .vimrc file
 * make sure metadata.rb file is there, it sholud contain the same ruby version and vim uses (system ruby)
 * in case the file is not there type:
 * ruby extconf.rb && make
+
+# installation
+* clone dot files repo: git://github/patryk151900/dotfiles
+* link .vim and .vimrc to home: ln -s repos/dotfiles/.vim .vim
+* clone vundle to .vim/bundle/vundle
+* open vim and call :PluginInstall
+* clone powerline fonts and call sudo install.sh
+* in case of putty make sure putty host has powerline fonts installed
+* check with Character Map if fonts/symbols are installed - check in common -> A0E1 for line number symbol
+* in order to see airline symbols in console vim set the right font in terminal settings - from this time you should see new symbols in vim
+* do not configure symnols in .vimrc - this is necessary only if you like to replace default symbols
+
+# vim compilation from scratch
+* sudo apt-get install ruby-dev python-dev
+* git clone https://github.com/vim/vim.git
+* ./configure --disable-nls --enable-multibyte --with-tlib=ncurses --enable-pythoninterp --enable-rubyinterp --with-features=huge --with-python-config-dir=/usr/lib/python2.7/config-i386-linux-gnu
+* hint: path to python config dir is necessary othervise will not compile
+* make -j 3
+* sudo make install
+* hash vim						- when new vim is not visible
+
+# quick getting of rubby and python supported version
+sudo atp-get install vim-nox (this will add rubby support needed for LustyExplorer buffer)
+
+# knowledge cheatsheets installation
+git clone git@bitbucket.org:patryk151900/knowledge.git 
+into .knowledge or make symbolic link to .knowledge from existing repo
+<leader>hv	- opens vim cheatsheet
+<leader>hl	- opens linux cheatsheet
+<leader>hg	- opens git cheatsheet
+
