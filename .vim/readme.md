@@ -1,15 +1,31 @@
 # Misc, short
 :set cc=80			- inserts vertical color column
 :help colorcolumn	- see how to change color
-dF					- open file under cursor
+gF					- open file under cursor
+Ctrl+R "			- paste to vim command line
+:<, >s/^..//		- deleted first 2 chars in each line in v-block
+/,$s/<find>/<replace>/gci	- search/replace from cursor, confirmation, match case
+bufdo bd			- close all buffers
+:echo @%			- current file path
 
 # greping files
 * grep				- find files
 * copen, cclose		- open searched files
 * cn, cp			- next, previous
 
+# compiling files
+- see ~/.vim/startup/mappings.vim
+	F8					:make run<CR>
+	F9					:make clean<CR>
+	F10					:make<CR>				- in order to use quickfix
+	F11					:make test<CR>
+	F12					:make tests<CR>
+- quickfix
+	:copen				open qf, open prior to compilation
+	:ccl				close qf
+
 # autocompletion
-* Ctrl+p or Ctrl+n in insert mode, hit agani to loop over the list
+* Ctrl+p or Ctrl+n in insert mode, hit again to loop over the list
 * Ctrl+x for autocompletion submode
 	* ] for tag
 	* f for file
@@ -33,10 +49,10 @@ dF					- open file under cursor
 # spellcheck
 * :set spell spelllang=en_us
 * :setlocal spell spelllang=en_us		- only current buffer
-* :set nospell					- switch off
-* ]s						- next misspell
-* [s						- previous missspell
-* z=						- show suggestion
+* :set nospell							- switch off
+* ]s									- next misspell
+* [s									- previous missspell
+* z=									- show suggestion
 
 # plugins short manual
 
@@ -88,7 +104,7 @@ PluginInstall		- installs a plugin when added to .vimrc file
 
 ## command-t.vim problem: Expected version: [unknown]-p[unknown]
 * go to command-t plugin dir in vim
-* make sure metadata.rb file is there, it sholud contain the same ruby version and vim uses (system ruby)
+* make sure metadata.rb file is there, it should contain the same ruby version and vim uses (system ruby)
 * in case the file is not there type:
 * ruby extconf.rb && make
 
@@ -101,7 +117,7 @@ PluginInstall		- installs a plugin when added to .vimrc file
 * in case of putty make sure putty host has powerline fonts installed
 * check with Character Map if fonts/symbols are installed - check in common -> A0E1 for line number symbol
 * in order to see airline symbols in console vim set the right font in terminal settings - from this time you should see new symbols in vim
-* do not configure symnols in .vimrc - this is necessary only if you like to replace default symbols
+* do not configure symbols in .vimrc - this is necessary only if you like to replace default symbols
 
 # vim compilation from scratch
 * sudo apt-get install ruby-dev python-dev
