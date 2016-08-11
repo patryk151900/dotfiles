@@ -28,6 +28,7 @@ let mapleader='\'
 "display readme.md with hints
 nmap <leader>hv :e ~/.vim/readme.md<CR>
 nmap <leader>hl :e ~/.knowledge/linux.md<CR>
+nmap <leader>hp :e ~/.knowledge/linux_programming.md<CR>
 nmap <leader>hg :e ~/.knowledge/git.md<CR>
 
 "show file name

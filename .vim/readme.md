@@ -7,6 +7,13 @@ Ctrl+R "			- paste to vim command line
 /,$s/<find>/<replace>/gci	- search/replace from cursor, confirmation, match case
 bufdo bd			- close all buffers
 :echo @%			- current file path
+:read !find <dir>	- insert output of the find commnad to the current buffer
+
+# config files
+~/.vimrc
+~/.vim/startup/functions.vim
+~/.vim/startup/mappings.vim
+~/.vim/startup/settings.vim
 
 # greping files
 * grep				- find files
