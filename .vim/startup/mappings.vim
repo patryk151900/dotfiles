@@ -12,6 +12,11 @@ vno <left> <Nop>
 vno <right> <Nop>
 vno <up> <Nop>
 
+map <up> :resize +1<CR>
+map <down> :resize -1<CR>
+map <right> :vertical resize +1<CR>
+map <left> :vertical resize -1<CR>
+
 "nerd tree operation
 map <C-h> :call PreviousBuffer()<CR>
 map <C-l> :call NextBuffer()<CR>
