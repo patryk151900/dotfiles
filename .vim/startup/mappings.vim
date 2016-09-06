@@ -29,6 +29,7 @@ let mapleader='\'
 nmap <leader>hv :e ~/.vim/readme.md<CR>
 nmap <leader>hl :e ~/.knowledge/linux.md<CR>
 nmap <leader>hp :e ~/.knowledge/linux_programming.md<CR>
+nmap <leader>hc :e ~/.knowledge/c.md<CR>
 nmap <leader>hg :e ~/.knowledge/git.md<CR>
 
 "show file name
@@ -60,4 +61,7 @@ nmap <leader>A :Ack <C-r><C-w><CR>
   nmap <leader>7 <Plug>AirlineSelectTab7
   nmap <leader>8 <Plug>AirlineSelectTab8
   nmap <leader>9 <Plug>AirlineSelectTab9
+
+"spellcheck
+nmap <leader>s :setlocal spell! spelllang=en_us<CR>
 

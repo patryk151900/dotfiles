@@ -28,12 +28,18 @@ set number
 set relativenumber
 set nocompatible
 
+
+
 set enc=utf-8
 set fillchars=vert:¦
 
 set noexpandtab
 set tabstop=4
 set shiftwidth=4
+"specific file settings
+autocmd FileType python setl tabstop=4|setl shiftwidth=4|setl expandtab
+autocmd FileType c setl tabstop=4|setl shiftwidth=4|setl expandtab
+autocmd FileType cpp setl tabstop=4|setl shiftwidth=4|setl expandtab
 set foldcolumn=1
 set cc=+1,+2
 

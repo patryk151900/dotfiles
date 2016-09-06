@@ -8,6 +8,7 @@ Ctrl+R "			- paste to vim command line
 bufdo bd			- close all buffers
 :echo @%			- current file path
 :read !find <dir>	- insert output of the find commnad to the current buffer
+:set ft?			- read detected file type
 
 # config files
 ~/.vimrc
@@ -56,6 +57,7 @@ bufdo bd			- close all buffers
 # spellcheck
 * :set spell spelllang=en_us
 * :setlocal spell spelllang=en_us		- only current buffer
+* :setlocal spell! spelllang=en_us		- toggle
 * :set nospell							- switch off
 * ]s									- next misspell
 * [s									- previous missspell
