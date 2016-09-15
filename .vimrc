@@ -15,6 +15,7 @@ Plugin 'sjbach/lusty'
 Plugin 'majutsushi/tagbar'
 Plugin 'will133/vim-dirdiff'
 Plugin 'lambdalisue/vim-pager'
+Plugin 'rhysd/vim-clang-format'
 
 "============== Filetype stuff ===============
 filetype plugin on

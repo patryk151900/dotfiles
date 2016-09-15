@@ -37,9 +37,9 @@ set noexpandtab
 set tabstop=4
 set shiftwidth=4
 "specific file settings
-autocmd FileType python setl tabstop=4|setl shiftwidth=4|setl expandtab
-autocmd FileType c setl tabstop=4|setl shiftwidth=4|setl expandtab
-autocmd FileType cpp setl tabstop=4|setl shiftwidth=4|setl expandtab
+autocmd FileType python setl tabstop=4|setl shiftwidth=4|setl expandtab|setl colorcolumn=80
+autocmd FileType c setl tabstop=8|setl shiftwidth=8|setl noexpandtab|setl colorcolumn=80
+autocmd FileType cpp setl tabstop=8|setl shiftwidth=8|setl noexpandtab|setl colorcolumn=80
 set foldcolumn=1
 set cc=+1,+2
 
@@ -97,3 +97,19 @@ let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
 "ctrlp settings
 let g:ctrlp_working_path_mode = '~'
 let g:ctrlp_show_hidden = 1
+
+"vim-clang-format settings
+" as close as possible to Linux checkpatch.pl
+let g:clang_format#style_options = {
+			\ "AlignAfterOpenBracket" : "Align",
+			\ "AllowShortIfStatementsOnASingleLine" : "false",
+			\ "AllowShortFunctionsOnASingleLine" : "Inline",
+            \ "BreakBeforeBraces" : "Linux",
+			\ "BinPackParameters" : "false",
+			\ "BinPackArguments" : "false",
+			\ "PointerAlignment" : "Right",
+			\ "ColumnLimit" : "80",
+			\ "IndentCaseLabels" : "false",
+			\ "AlignTrailingComments" : "true",
+			\ }
+

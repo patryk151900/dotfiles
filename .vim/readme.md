@@ -9,6 +9,7 @@ bufdo bd			- close all buffers
 :echo @%			- current file path
 :read !find <dir>	- insert output of the find commnad to the current buffer
 :set ft?			- read detected file type
+:cexpr system('ls -ahl') | copen	- open command output in quickfix
 
 # config files
 ~/.vimrc
@@ -116,6 +117,12 @@ PluginInstall		- installs a plugin when added to .vimrc file
 * make sure metadata.rb file is there, it should contain the same ruby version and vim uses (system ruby)
 * in case the file is not there type:
 * ruby extconf.rb && make
+
+## vim-clang-format
+* install clang-format by
+	sudo apt-get install clang-format-3.8		- check the latest avalilable version
+* :ClangFormat or leader + f to format code
+* format rules kept in settings.vim
 
 # installation
 * clone dot files repo: git://github/patryk151900/dotfiles

@@ -37,8 +37,11 @@ nmap <leader>hp :e ~/.knowledge/linux_programming.md<CR>
 nmap <leader>hc :e ~/.knowledge/c.md<CR>
 nmap <leader>hg :e ~/.knowledge/git.md<CR>
 
-"show file name
-map <leader>f  :echo expand('%:p')<CR>
+"show file path
+map <leader>p  :echo expand('%:p')<CR>
+
+"make clang format
+map <leader>f  :ClangFormat<CR>
 
 "comile test
 map <leader><F7> :!./s/build.sh 2> compile_log.txt<CR>
