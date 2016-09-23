@@ -66,6 +66,12 @@ bufdo bd			- close all buffers
 
 # plugins short manual
 
+## DoxygenToolkit
+	:Dox			- function comment or brief for others
+					  leader + d for shortcut
+	:DoxAuthor		- adds file header
+	:DoxLic			- adds licence file
+
 ## DirDiff - diffing files in folders
 :DirDiff <dir1> <dir2>
 

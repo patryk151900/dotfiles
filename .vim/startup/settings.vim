@@ -113,3 +113,12 @@ let g:clang_format#style_options = {
 			\ "AlignTrailingComments" : "true",
 			\ }
 
+" DoxygenToolkit plugin
+let g:DoxygenToolkit_briefTag_pre="@brief "
+let g:DoxygenToolkit_paramTag_pre="@param "
+let g:DoxygenToolkit_returnTag="@returns "
+let g:DoxygenToolkit_blockHeader=""
+let g:DoxygenToolkit_blockFooter=""
+let g:DoxygenToolkit_authorName="Patryk Pruszynski"
+let g:DoxygenToolkit_versionString=""
+let g:DoxygenToolkit_licenseTag="<fill license>"
