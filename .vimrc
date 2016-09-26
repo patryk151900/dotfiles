@@ -5,18 +5,17 @@ call vundle#rc()
 "plugins managed by vundle
 Plugin 'vim-airline'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Lokaltog/vim-easymotion'
+Plugin 'majutsushi/tagbar' "right side variables, functions navigator
+Plugin 'will133/vim-dirdiff'
+Plugin 'mileszs/ack.vim'
+Plugin 'rhysd/vim-clang-format'
+Plugin 'mrtazz/DoxygenToolkit.vim'
+"Plugin 'Lokaltog/vim-easymotion'
 "Plugin 'Lokaltog/vim-powerline'
 "Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
-Plugin 'mileszs/ack.vim'
 Plugin 'wincent/command-t'
 Plugin 'sjbach/lusty'
-Plugin 'majutsushi/tagbar'
-Plugin 'will133/vim-dirdiff'
-Plugin 'lambdalisue/vim-pager'
-Plugin 'rhysd/vim-clang-format'
-Plugin 'mrtazz/DoxygenToolkit.vim'
 
 "============== Filetype stuff ===============
 filetype plugin on
