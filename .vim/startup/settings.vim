@@ -7,7 +7,13 @@ set incsearch
 set wildmenu
 syntax enable
 set synmaxcol=0
+
 set term=xterm-256color
+"set screen term in case of TMUX and screen sessions
+"this is to avoid background problem
+if $TERM == 'screen-256color'
+	set term=screen-256color
+endif
 
 set display=uhex
 set shortmess=aAIsT
