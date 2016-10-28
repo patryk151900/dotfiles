@@ -2,17 +2,34 @@ set nocompatible
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-"plugins managed by vundle
+" vundle managed plugins
+
+" just provides airline
 Plugin 'vim-airline'
+" left side file explorer
 Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar' "right side variables, functions navigator
+ "right side variables, functions navigator
+Plugin 'majutsushi/tagbar'
+" directory compare tool - a'la Araxis Merge, WinMerge
 Plugin 'will133/vim-dirdiff'
+" grep-ack search inside vim
 Plugin 'mileszs/ack.vim'
+" formating tool for C, C++
 Plugin 'rhysd/vim-clang-format'
+" doxygen snipets inserts
 Plugin 'mrtazz/DoxygenToolkit.vim'
-"Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'Lokaltog/vim-powerline'
-"Plugin 'tpope/vim-fugitive'
+" yapf - code formatter for python (and not only)
+Plugin 'mindriot101/vim-yapf'
+" vim-flake8 - syntax checker for python
+Plugin 'nvie/vim-flake8'
+" syntastic - displays errors on signs column
+Plugin 'scrooloose/syntastic'
+" vim autocompletion, doc, etc.
+Plugin 'davidhalter/jedi-vim'
+" supertab - allows to use tab for completion - ??? to be checked if needed
+Plugin 'ervandew/supertab'
+
+" rarely used
 Plugin 'kien/ctrlp.vim'
 Plugin 'wincent/command-t'
 Plugin 'sjbach/lusty'

@@ -27,7 +27,6 @@ set scrolloff=999
 set ignorecase
 set smartcase
 
-set completeopt=menu
 set mousemodel=popup
 set backspace=2
 set number
@@ -128,3 +127,21 @@ let g:DoxygenToolkit_blockFooter=""
 let g:DoxygenToolkit_authorName="Patryk Pruszynski"
 let g:DoxygenToolkit_versionString=""
 let g:DoxygenToolkit_licenseTag="<fill license>"
+
+" flake8 - python static analysis
+"autocmd BufWritePost *.py call Flake8()  " this is already called by
+"syntactic
+
+" yapf
+let g:yapf_style = "pep8"
+
+" Syntastic
+highlight SyntasticErrorSign ctermbg=1 ctermfg=7
+highlight SyntasticWarningSign ctermbg=3 ctermfg=0
+let g:syntastic_enable_highlighting = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_error_symbol = 'FF'
+let g:syntastic_warning_symbol = 'WW'
+let g:syntastic_style_error_symbol = 'SF'
+let g:syntastic_style_warning_symbol = 'SW'
+

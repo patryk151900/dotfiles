@@ -42,14 +42,19 @@ map <leader>p  :echo expand('%:p')<CR>
 
 "make clang format
 map <leader>f  :ClangFormat<CR>
+"yapf for python files
+autocmd BufEnter,BufNew *.py map <leader>f :call Yapf()<CR>
 
-"comile test
+"C related make calls
 map <leader><F7> :!./s/build.sh 2> compile_log.txt<CR>
 map <leader><F8> :make run<CR>
 map <leader><F9> :make clean<CR>
 map <leader><F10> :make<CR>
 map <leader><F11> :make test<CR>
 map <leader><F12> :make tests<CR>
+
+"Python execution
+autocmd BufEnter,BufNew *.py map <leader><F8> :!python % <CR>
 
 "Lusty buffer
 nmap <leader>B :LustyBufferExplorer<CR>
