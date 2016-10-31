@@ -8,6 +8,9 @@
 :set cc=80			- inserts vertical color column
 :help colorcolumn	- see how to change color
 gF					- open file under cursor
+gv					- restore last visual selection
+gq					- reorganize visually selected text
+g Ctrl g			- display char count in v mode
 Ctrl+R "			- paste to vim command line
 :<, >s/^..//		- deleted first 2 chars in each line in v-block
 /,$s/<find>/<replace>/gci	- search/replace from cursor, confirmation, match case
