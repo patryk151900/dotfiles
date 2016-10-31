@@ -39,8 +39,6 @@ filetype plugin on
 filetype indent on
 
 "============== Script configs ===============
-let NERDTreeMinimalUI=1
-let NERDTreeDirArrows=1
 
 " Load custom settings
 source ~/.vim/startup/color.vim

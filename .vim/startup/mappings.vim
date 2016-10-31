@@ -20,8 +20,8 @@ map <left> :vertical resize -1<CR>
 "nerd tree operation
 map <C-h> :call PreviousBuffer()<CR>
 map <C-l> :call NextBuffer()<CR>
-nmap <silent> <F3> :NERDTreeToggle<CR>
-nmap <silent> <F4> :TagbarToggle<CR>
+map <silent> <F3> :NERDTreeToggle<CR>
+map <silent> <F4> :TagbarToggle<CR>
 
 "cycling through buffers
 no <silent> <C-y> :call PreviousBuffer()<CR>

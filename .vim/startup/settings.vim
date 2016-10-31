@@ -80,13 +80,22 @@ endif
 "  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 "endif
 
-set guifont=Droid\ Sans\ Mono\ for\ Powerline:10
-let g:Powerline_symbols = 'fancy'
-"this is for powerline
 "call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 let g:NERDTreeWinSize = 30
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
+
 "airline settings
-let g:airline_powerline_fonts = 1
+set guifont=Droid\ Sans\ Mono\ for\ Powerline:10
+let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 0	" 1 if to use special al/pl fonts
+if g:airline_powerline_fonts == 0
+	let g:airline_left_sep=''
+	let g:airline_left_alt_sep=''
+	let g:airline_right_sep=''
+	let g:airline_right_alt_sep=''
+endif
+let g:airline_theme='powerlineish'		" color of airline modes
 let g:airline_section_b = '%{strftime("%c")}'
 let g:airline_section_y = 'BN: %{bufnr("%")}'
 let g:airline_section_z = airline#section#create(['%3p%% ', g:airline_symbols.linenr, '(%L) %l', ':%2c ', '0x%02B'])
@@ -95,7 +104,6 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#show_close_button = 1
 let g:airline#extensions#tabline#close_symbol = 'X'
-let g:airline_theme='powerlineish'
 let g:airline#extensions#tabline#show_tabs = 1
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#tab_nr_type = 1 " tab number

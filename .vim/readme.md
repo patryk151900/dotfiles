@@ -115,8 +115,18 @@ PluginInstall		- installs a plugin when added to .vimrc file
 
 # hints, tips, troubleshooting
 
+## NERDTree error on toggle - no strchars function
+- strchars function is available only from vim 7.3
+- workaround:
+	- edit .vim/bundle/nerdtree/lib/nerdtree/ui.vim
+	- replace line containing strchars with the following line:
+		let leadChars = strlen(substitute(copy(a:line[0:numLeadBytes-1]), '.', 'x', 'g'))
+
+## when F1-F4 cause case toggle under Putty
+- set Putty->Settings->Terminal->Keyboard->Xterm 6
+
 ## powerline font configuration
-- when accessed Vim via putty there might be some strange characters visible
+- when accessed Vim via Putty there might be some strange characters visible
 - make sure putty is properly configured
 - make sure Settings->Window->Translation encoding is set to UTF-8
 - make sure Settings->Appearance->Font change to one of the Powerline fonts (installed on Putty host machine)
