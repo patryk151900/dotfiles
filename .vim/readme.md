@@ -5,11 +5,13 @@
 ~/.vim/startup/settings.vim
 
 # Misc, short
+:set hlsearch!		- enables highlight for searched tags
+:nohighlight		- switches off current highlight
 :set cc=80			- inserts vertical color column
 :help colorcolumn	- see how to change color
 gF					- open file under cursor
 gv					- restore last visual selection
-gq					- reorganize visually selected text
+gq					- reorganize visually selected text to stick 80 lines
 g Ctrl g			- display char count in v mode
 Ctrl+R "			- paste to vim command line
 :<, >s/^..//		- deleted first 2 chars in each line in v-block
