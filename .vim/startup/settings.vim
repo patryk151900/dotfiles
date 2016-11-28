@@ -98,7 +98,7 @@ endif
 let g:airline_theme='powerlineish'		" color of airline modes
 let g:airline_section_b = '%{strftime("%c")}'
 let g:airline_section_y = 'BN: %{bufnr("%")}'
-let g:airline_section_z = airline#section#create(['%3p%% ', g:airline_symbols.linenr, '(%L) %l', ':%2c ', '0x%02B'])
+let g:airline_section_z = airline#section#create(['l:%p%%/%l/%L', ' c:%c', ' a:0x%02B'])
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'

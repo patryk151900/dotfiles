@@ -23,9 +23,12 @@ bufdo bd			- close all buffers
 :cexpr system('ls -ahl') | copen	- open command output in quickfix
 
 # greping files
-- grep				- find files
-- copen, cclose		- open searched files
-- cn, cp			- next, previous
+	grep				- find files
+	grep -s				- find files, supress error messages
+- search pattern_to_search in all c files located in the current directory
+	grep -lr --include=*.{c,h} pattern_to_search .
+	copen, cclose		- open searched files
+	cn, cp			- next, previous
 
 # compiling files
 - see ~/.vim/startup/mappings.vim
@@ -125,7 +128,7 @@ PluginInstall		- installs a plugin when added to .vimrc file
 		let leadChars = strlen(substitute(copy(a:line[0:numLeadBytes-1]), '.', 'x', 'g'))
 
 ## when F1-F4 cause case toggle under Putty
-- set Putty->Settings->Terminal->Keyboard->Xterm 6
+- set Putty->Settings->Terminal->Keyboard->Xterm R6
 
 ## powerline font configuration
 - when accessed Vim via Putty there might be some strange characters visible

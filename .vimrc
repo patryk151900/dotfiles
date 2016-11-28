@@ -26,8 +26,6 @@ Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/syntastic'
 " vim autocompletion, doc, etc.
 Plugin 'davidhalter/jedi-vim'
-" supertab - allows to use tab for completion - ??? to be checked if needed
-Plugin 'ervandew/supertab'
 
 " rarely used
 Plugin 'kien/ctrlp.vim'
