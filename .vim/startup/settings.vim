@@ -36,7 +36,6 @@ set nocompatible
 
 
 set enc=utf-8
-set fillchars=vert:¦
 
 set noexpandtab
 set tabstop=4
@@ -45,6 +44,7 @@ set shiftwidth=4
 autocmd FileType python setl tabstop=4|setl shiftwidth=4|setl expandtab|setl colorcolumn=80
 autocmd FileType c setl tabstop=8|setl shiftwidth=8|setl noexpandtab|setl colorcolumn=80
 autocmd FileType cpp setl tabstop=8|setl shiftwidth=8|setl noexpandtab|setl colorcolumn=80
+autocmd FileType md setl tabstop=4|setl shiftwidth=4|setl noexpandtab|setl colorcolumn=80
 set foldcolumn=1
 set cc=+1,+2
 
@@ -84,6 +84,9 @@ endif
 let g:NERDTreeWinSize = 30
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
+" redefine utf symbols to standard ASCII to extend compatibility
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '~'
 
 "airline settings
 set guifont=Droid\ Sans\ Mono\ for\ Powerline:10
