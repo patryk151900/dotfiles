@@ -179,7 +179,7 @@ PluginInstall		- installs a plugin when added to .vimrc file
 sudo atp-get install vim-nox (this will add rubby support needed for LustyExplorer buffer)
 
 # knowledge cheatsheets installation
-git clone git@bitbucket.org:patryk151900/knowledge.git 
+git clone git@bitbucket.org:patryk151900/knowledge.git
 into .knowledge or make symbolic link to .knowledge from existing repo
 <leader>hv	- opens vim cheatsheet
 <leader>hl	- opens linux cheatsheet
