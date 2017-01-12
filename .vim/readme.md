@@ -22,6 +22,15 @@ bufdo bd			- close all buffers
 :set ft?			- read detected file type
 :cexpr system('ls -ahl') | copen	- open command output in quickfix
 
+# dos/unix conversion
+- to unix
+	:e ++ff=dos
+	:setlocal ff=unix
+	:w
+- to dos
+	:e ++ff=dos
+	:w
+
 # greping files
 	grep				- find files
 	grep -s				- find files, supress error messages
@@ -164,7 +173,32 @@ PluginInstall		- installs a plugin when added to .vimrc file
 - in case of putty make sure putty host has powerline fonts installed
 - check with Character Map if fonts/symbols are installed - check in common -> A0E1 for line number symbol
 - in order to see airline symbols in console vim set the right font in terminal settings - from this time you should see new symbols in vim
-- do not configure symbols in .vimrc - this is necessary only if you like to replace default symbols
+- do not configure symbols in .vimrc - this is necessary only if you like to replace default symbolsnsta
+
+#installation on Win7
+- clone dotfiles repo:
+	git clone ssh://git@github.com/patryk151900/dotfiles.git --config core.autocrlf=false
+- make sure %HOMEPATH%\.vim is created
+- make links from dotfiles:
+	mklink /D %HOMEPATH%\.vim\startup c:\repos\dotfiles\.vim\startup
+	mklink /D %HOMEPATH%\.vim\colors c:\repos\dotfiles\.vim\colors
+	mklink %HOMEPATH%\.vim\readme.md c:\repos\dotfiles\.vim\readme.md
+	mklink %HOMEPATH%\_vimrc c:\repos\dotfiles\.vimrc
+- (needed by vundle) in git folder\cmd add curl.cmd with content:
+	@rem Do not use "echo off" to not affect any child calls.
+	@setlocal
+
+	@rem Get the abolute path to the parent directory, which is assumed to be the
+	@rem Git installation root.
+	@for /F "delims=" %%I in ("%~dp0..") do @set git_install_root=%%~fI
+	@set PATH=%git_install_root%\bin;%git_install_root%\mingw\bin;%git_install_root%\mingw64\bin;%PATH%
+	@rem !!!!!!! For 64bit msysgit, replace 'mingw' above with 'mingw64' !!!!!!!
+
+	@if not exist "%HOME%" @set HOME=%HOMEDRIVE%%HOMEPATH%
+	@if not exist "%HOME%" @set HOME=%USERPROFILE%
+
+	@curl.exe %*
+- run vim and run PluginInstall
 
 # vim compilation from scratch
 - sudo apt-get install ruby-dev python-dev

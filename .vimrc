@@ -26,11 +26,12 @@ Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/syntastic'
 " vim autocompletion, doc, etc.
 Plugin 'davidhalter/jedi-vim'
+" buffer/file navigation
+Plugin 'kien/ctrlp.vim'
 
 " rarely used
-Plugin 'kien/ctrlp.vim'
-Plugin 'wincent/command-t'
-Plugin 'sjbach/lusty'
+" Plugin 'wincent/command-t'
+" Plugin 'sjbach/lusty'
 
 "============== Filetype stuff ===============
 filetype plugin on
