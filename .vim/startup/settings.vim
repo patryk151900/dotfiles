@@ -178,3 +178,5 @@ let g:syntastic_warning_symbol = 'WW'
 let g:syntastic_style_error_symbol = 'SF'
 let g:syntastic_style_warning_symbol = 'SW'
 
+" tagbar
+let g:tagbar_iconchars = ['+', '-']		"to ensure max compatibility
