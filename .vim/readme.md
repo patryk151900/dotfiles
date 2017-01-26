@@ -81,6 +81,18 @@ bufdo bd			- close all buffers
 - [s									- previous missspell
 - z=									- show suggestion
 
+# cscope
+- to set vim as main editor set env variable
+	export CSCOPE_EDITOR=vim
+- run sc from vim
+	:cs help							- shows handy help
+	cscope -CRb							- create db file cscope.out
+	:cs add cscope.out					- connect to cscope db file
+	:cs reset							- update db after change
+	:cs show							- show connected files
+	:cs kill <db id>					- close connection
+	:cs find s <symbol to find> 
+
 # plugins short manual
 
 ## DoxygenToolkit

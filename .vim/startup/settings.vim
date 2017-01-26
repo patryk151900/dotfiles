@@ -15,6 +15,13 @@ else
 	set term=xterm-256color
 endif
 
+if has('cscope')
+	set cscopetag cscopeverbose
+
+	if has('quickfix')
+		set cscopequickfix=s-,c-,d-,i-,t-,e-
+	endif
+endif
 "============== General Settings ===============
 set dict=/usr/share/dict/words
 set cursorline
