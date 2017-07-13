@@ -1,27 +1,3 @@
-"============== Gvim settings for Windows ===============
-if has("gui_running")
-	set lines=999 columns=999  "makes window bigger
-	au GUIEnter * simalt ~x    "makes window maximized
-	let $LANG = 'en_US'
-	set langmenu=en_US.UTF-8
-	""""""""""""""""""""""""""""""""""""""""""""""""
-	"" Set Color Scheme and Font Options
-	""""""""""""""""""""""""""""""""""""""""""""""""
-	let g:solarized_italic=0
-	let g:solarized_visibility="low"
-	let g:solarized_hitrail=0
-	colorscheme solarized
-else
-	set term=xterm-256color
-endif
-
-if has('cscope')
-	set cscopetag cscopeverbose
-
-	if has('quickfix')
-		set cscopequickfix=s-,c-,d-,i-,t-,e-
-	endif
-endif
 "============== General Settings ===============
 set dict=/usr/share/dict/words
 set cursorline
@@ -32,11 +8,15 @@ set wildmenu
 syntax enable
 set synmaxcol=0
 
+set term=xterm-256color
 "set screen term in case of TMUX and screen sessions
 "this is to avoid background problem
 if $TERM == 'screen-256color'
 	set term=screen-256color
 endif
+
+"avoid syntax as causes unnecessary formatting when inserting code
+autocmd FileType markdown setlocal syntax=off
 
 set display=uhex
 set shortmess=aAIsT
@@ -56,15 +36,18 @@ set number
 set relativenumber
 set nocompatible
 
+
+
 set enc=utf-8
+"set fillchars=vert:|
 
 set noexpandtab
 set tabstop=4
 set shiftwidth=4
 "specific file settings
 autocmd FileType python setl tabstop=4|setl shiftwidth=4|setl expandtab|setl colorcolumn=80
-autocmd FileType c setl tabstop=8|setl shiftwidth=8|setl noexpandtab|setl colorcolumn=80
-autocmd FileType cpp setl tabstop=8|setl shiftwidth=8|setl noexpandtab|setl colorcolumn=80
+autocmd FileType c setl tabstop=4|setl shiftwidth=4|setl noexpandtab|setl colorcolumn=80
+autocmd FileType cpp setl tabstop=4|setl shiftwidth=4|setl noexpandtab|setl colorcolumn=80
 autocmd FileType md setl tabstop=4|setl shiftwidth=4|setl noexpandtab|setl colorcolumn=80
 set foldcolumn=1
 set cc=+1,+2
@@ -120,8 +103,8 @@ if g:airline_powerline_fonts == 0
 	let g:airline_right_alt_sep=''
 endif
 let g:airline_theme='powerlineish'		" color of airline modes
-"let g:airline_section_b = '%{strftime("%c")}'
-let g:airline_section_b = 'BN: %{bufnr("%")}'
+let g:airline_section_b = '%{strftime("%c")}'
+let g:airline_section_y = 'BN: %{bufnr("%")}'
 let g:airline_section_z = airline#section#create(['l:%p%%/%l/%L', ' c:%c', ' a:0x%02B'])
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -134,7 +117,6 @@ let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
 "ctrlp settings
 let g:ctrlp_working_path_mode = '~'
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_cmd = 'CtrlPBuffer'				" make buffer search default
 
 "vim-clang-format settings
 " as close as possible to Linux checkpatch.pl
@@ -149,6 +131,8 @@ let g:clang_format#style_options = {
 			\ "ColumnLimit" : "80",
 			\ "IndentCaseLabels" : "false",
 			\ "AlignTrailingComments" : "true",
+			\ "TabWidth" : "4",
+			\ "UseTab" : "Always",
 			\ }
 
 " DoxygenToolkit plugin
@@ -163,20 +147,22 @@ let g:DoxygenToolkit_licenseTag="<fill license>"
 
 " flake8 - python static analysis
 "autocmd BufWritePost *.py call Flake8()  " this is already called by
-"syntactic
 
 " yapf
 let g:yapf_style = "pep8"
 
-" Syntastic
+" syntastic
 highlight SyntasticErrorSign ctermbg=1 ctermfg=7
 highlight SyntasticWarningSign ctermbg=3 ctermfg=0
 let g:syntastic_enable_highlighting = 1
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 let g:syntastic_error_symbol = 'FF'
 let g:syntastic_warning_symbol = 'WW'
 let g:syntastic_style_error_symbol = 'SF'
 let g:syntastic_style_warning_symbol = 'SW'
+" add extra directories for testing c files only
+let g:syntastic_c_include_dirs = ["includes", "headers", "src"]
 
-" tagbar
-let g:tagbar_iconchars = ['+', '-']		"to ensure max compatibility

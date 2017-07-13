@@ -31,6 +31,11 @@ bufdo bd			- close all buffers
 	:e ++ff=dos
 	:w
 
+# hex to decimal, decimal to hex
+:echo 0x26					- will display 38
+:echo printf("%d", 0x26)	- displays 38
+:echo printf("%x", 38)		- displays 26
+
 # greping files
 	grep				- find files
 	grep -s				- find files, supress error messages
@@ -44,8 +49,8 @@ bufdo bd			- close all buffers
 	F8					:make run<CR>
 	F9					:make clean<CR>
 	F10					:make<CR>				- in order to use quickfix
-	F11					:make test<CR>
-	F12					:make tests<CR>
+	F11					:make test_single<CR>
+	F12					:make test_all<CR>
 - quickfix
 	:copen				open qf, open prior to compilation
 	:ccl				close qf
@@ -64,8 +69,10 @@ bufdo bd			- close all buffers
 - C-Whjkl		navigation
 
 # vimdiff comparing files
-- diffthis		on file to mark file for diff, the same on anoter file
+- diffthis		on file to mark file for diff,
+				the same on anoter file
 - diffoff		to end diff
+- set scrollbind=on			binds scrolling
 - dif			diffupdate - to refresh diff
 - [c			previous change
 - ]c			next change
@@ -92,7 +99,20 @@ bufdo bd			- close all buffers
 	:cs show							- show connected files
 	:cs kill <db id>					- close connection
 	:cs find s <symbol to find> 
+- other way to build out file (default files + e.g. sig files)
+	find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' -o -iname '*.sig' > cscope.files
+	find . -iname '*.c' -o -iname -o -iname '*.h' -o -iname '*.l' -o -iname '*.y' -o -iname '*.-o -iname '*.sig' > cscope.files
+	cscope -bC -i cscope.files
 
+# special characters in vim
+- :digraph				- check what are special chars
+- Insert mode + ^V172	- will insert char under 172 number
+
+# color tips¬
+- to set/fix parenthesis matching - add this to config file¬
+›   hi MatchParen guifg=#000000 ctermfg=0 guibg=#FD971F ctermbg=green¬
+- runtime syntax/colortest.vim - check available colors¬
+- 
 # plugins short manual
 
 ## DoxygenToolkit
