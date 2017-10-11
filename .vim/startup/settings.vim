@@ -1,3 +1,21 @@
+"============== Gvim settings for Windows ===============
+if has("gui_running")
+	set lines=999 columns=999  "makes window bigger
+	au GUIEnter * simalt ~x    "makes window maximized
+	let $LANG = 'en_US'
+	set langmenu=en_US.UTF-8
+	""""""""""""""""""""""""""""""""""""""""""""""""
+	"" Set Color Scheme and Font Options
+	""""""""""""""""""""""""""""""""""""""""""""""""
+	let g:solarized_italic=0
+	let g:solarized_visibility="low"
+	let g:solarized_hitrail=0
+	colorscheme solarized
+else
+	set term=xterm-256color
+endif
+
+
 "============== General Settings ===============
 set dict=/usr/share/dict/words
 set cursorline
@@ -8,7 +26,6 @@ set wildmenu
 syntax enable
 set synmaxcol=0
 
-set term=xterm-256color
 "set screen term in case of TMUX and screen sessions
 "this is to avoid background problem
 if $TERM == 'screen-256color'
@@ -93,7 +110,8 @@ let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '~'
 
 "airline settings
-set guifont=Droid\ Sans\ Mono\ for\ Powerline:10
+"set guifont=Droid\ Sans\ Mono\ for\ Powerline:10
+set guifont=DejaVu_Sans_Mono_for_Powerline:h10
 let g:Powerline_symbols = 'fancy'
 let g:airline_powerline_fonts = 0	" 1 if to use special al/pl fonts
 if g:airline_powerline_fonts == 0
@@ -166,3 +184,11 @@ let g:syntastic_style_warning_symbol = 'SW'
 " add extra directories for testing c files only
 let g:syntastic_c_include_dirs = ["includes", "headers", "src"]
 
+"cscope settings
+if has('cscope')
+	set cscopetag cscopeverbose
+
+	if has('quickfix')
+		set cscopequickfix=s-,c-,d-,i-,t-,e-
+	endif
+endif
