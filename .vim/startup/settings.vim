@@ -121,9 +121,9 @@ if g:airline_powerline_fonts == 0
 	let g:airline_right_alt_sep=''
 endif
 let g:airline_theme='powerlineish'		" color of airline modes
-let g:airline_section_b = '%{strftime("%c")}'
-let g:airline_section_y = 'BN: %{bufnr("%")}'
-let g:airline_section_z = airline#section#create(['l:%p%%/%l/%L', ' c:%c', ' a:0x%02B'])
+let g:airline_section_b = '%3p%%'
+let g:airline_section_y = airline#section#create_right(['ffenc'])
+let g:airline_section_z = airline#section#create(['l:%l/%L', ' c:%02c', ' a:0x%02B', ' BN: %{bufnr("%")}'])
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
