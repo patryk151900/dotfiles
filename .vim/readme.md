@@ -207,13 +207,14 @@ PluginInstall		- installs a plugin when added to .vimrc file
 - in order to see airline symbols in console vim set the right font in terminal settings - from this time you should see new symbols in vim
 - do not configure symbols in .vimrc - this is necessary only if you like to replace default symbolsnsta
 
-#installation on Win7
+#installation on Windows
 - clone dotfiles repo:
 	git clone ssh://git@github.com/patryk151900/dotfiles.git --config core.autocrlf=false
 - make sure %HOMEPATH%\.vim is created
 - make links from dotfiles:
 	mklink /D %HOMEPATH%\.vim\startup c:\repos\dotfiles\.vim\startup
 	mklink /D %HOMEPATH%\.vim\colors c:\repos\dotfiles\.vim\colors
+	mklink /D %HOMEPATH%\.knowledge c:\repos\knowledge
 	mklink %HOMEPATH%\.vim\readme.md c:\repos\dotfiles\.vim\readme.md
 	mklink %HOMEPATH%\_vimrc c:\repos\dotfiles\.vimrc
 - (needed by vundle) in git folder\cmd add curl.cmd with content:
