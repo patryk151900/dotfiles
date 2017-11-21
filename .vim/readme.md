@@ -88,7 +88,7 @@ bufdo bd			- close all buffers
 - [s									- previous missspell
 - z=									- show suggestion
 
-# cscope
+# scope
 - to set vim as main editor set env variable
 	export CSCOPE_EDITOR=vim
 - run sc from vim
@@ -101,7 +101,7 @@ bufdo bd			- close all buffers
 	:cs find s <symbol to find> 
 - other way to build out file (default files + e.g. sig files)
 	find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' -o -iname '*.sig' > cscope.files
-	find . -iname '*.c' -o -iname -o -iname '*.h' -o -iname '*.l' -o -iname '*.y' -o -iname '*.-o -iname '*.sig' > cscope.files
+	find . -iname '*.c' -o -iname '*.h' -o -iname '*.l' -o -iname '*.y' -o -iname '*.sig' > cscope.files
 	cscope -bC -i cscope.files
 
 # special characters in vim
