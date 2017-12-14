@@ -21,6 +21,8 @@ bufdo bd			- close all buffers
 :read !find <dir>	- insert output of the find commnad to the current buffer
 :set ft?			- read detected file type
 :cexpr system('ls -ahl') | copen	- open command output in quickfix
+:g/pattern/v		- selects all lines matching patterns
+:g/pattern/d		- deletes all lines matching patterns
 
 # dos/unix conversion
 - to unix
@@ -43,6 +45,7 @@ bufdo bd			- close all buffers
 	grep -lr --include=*.{c,h} pattern_to_search .
 	copen, cclose		- open searched files
 	cn, cp			- next, previous
+	grep -iarn --exclude="zip" "searched text" | vi -		- redirect the output to vi(m)
 
 # compiling files
 - see ~/.vim/startup/mappings.vim
@@ -88,7 +91,7 @@ bufdo bd			- close all buffers
 - [s									- previous missspell
 - z=									- show suggestion
 
-# scope
+# cscope
 - to set vim as main editor set env variable
 	export CSCOPE_EDITOR=vim
 - run sc from vim
@@ -101,7 +104,7 @@ bufdo bd			- close all buffers
 	:cs find s <symbol to find> 
 - other way to build out file (default files + e.g. sig files)
 	find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' -o -iname '*.sig' > cscope.files
-	find . -iname '*.c' -o -iname '*.h' -o -iname '*.l' -o -iname '*.y' -o -iname '*.sig' > cscope.files
+	find . -iname '*.c' -o -iname -o -iname '*.h' -o -iname '*.l' -o -iname '*.y' -o -iname '*.-o -iname '*.sig' > cscope.files
 	cscope -bC -i cscope.files
 
 # special characters in vim

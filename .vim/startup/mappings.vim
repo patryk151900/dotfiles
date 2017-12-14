@@ -78,5 +78,11 @@ nmap <leader>A :Ack <C-r><C-w><CR>
 "spellcheck
 nmap <leader>s :setlocal spell! spelllang=en_us<CR>
 
+"wrap
+nmap <leader>w :set wrap!<CR>
+
+"highlight search
+nmap <leader>l :set hlsearch!<CR>
+
 "DoxygenToolkit
 nmap <leader>d :Dox<CR>
