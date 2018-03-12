@@ -21,8 +21,6 @@ bufdo bd			- close all buffers
 :read !find <dir>	- insert output of the find commnad to the current buffer
 :set ft?			- read detected file type
 :cexpr system('ls -ahl') | copen	- open command output in quickfix
-:g/pattern/v		- selects all lines matching patterns
-:g/pattern/d		- deletes all lines matching patterns
 
 # dos/unix conversion
 - to unix
@@ -45,7 +43,6 @@ bufdo bd			- close all buffers
 	grep -lr --include=*.{c,h} pattern_to_search .
 	copen, cclose		- open searched files
 	cn, cp			- next, previous
-	grep -iarn --exclude="zip" "searched text" | vi -		- redirect the output to vi(m)
 
 # compiling files
 - see ~/.vim/startup/mappings.vim
@@ -112,6 +109,9 @@ bufdo bd			- close all buffers
 - Insert mode + ^V172	- will insert char under 172 number
 
 # color tips¬
+- to set/fix parenthesis matching - add this to config file¬
+›   hi MatchParen guifg=#000000 ctermfg=0 guibg=#FD971F ctermbg=green¬
+- runtime syntax/colortest.vim - check available colors¬
 - to set/fix parenthesis matching - add this to config file¬
 ›   hi MatchParen guifg=#000000 ctermfg=0 guibg=#FD971F ctermbg=green¬
 - runtime syntax/colortest.vim - check available colors¬
@@ -212,9 +212,6 @@ PluginInstall		- installs a plugin when added to .vimrc file
 
 #installation on Windows
 - clone dotfiles repo:
-	git clone ssh://git@github.com/patryk151900/dotfiles.git --config core.autocrlf=false
-- make sure %HOMEPATH%\.vim is created
-- make links from dotfiles:
 	mklink /D %HOMEPATH%\.vim\startup c:\repos\dotfiles\.vim\startup
 	mklink /D %HOMEPATH%\.vim\colors c:\repos\dotfiles\.vim\colors
 	mklink /D %HOMEPATH%\.knowledge c:\repos\knowledge
