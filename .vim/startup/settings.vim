@@ -2,8 +2,10 @@
 if has("gui_running")
 	set lines=999 columns=999  "makes window bigger
 	au GUIEnter * simalt ~x    "makes window maximized
-	let $LANG = 'en_US'
-	set langmenu=en_US.UTF-8
+	let $LANG = 'en_US'        "this does not work alone, you need to reload menu
+	set langmenu=en_US.UTF-8   "this does not work alone, you need to reload menu
+	source $VIMRUNTIME/delmenu.vim  "reload menu after changing language
+	source $VIMRUNTIME/menu.vim     "reload menu after changing language
 	""""""""""""""""""""""""""""""""""""""""""""""""
 	"" Set Color Scheme and Font Options
 	""""""""""""""""""""""""""""""""""""""""""""""""
