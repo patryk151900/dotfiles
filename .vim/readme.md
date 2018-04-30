@@ -37,10 +37,13 @@ bufdo bd			- close all buffers
 :echo printf("%x", 38)		- displays 26
 
 # greping files
-	grep				- find files
-	grep -s				- find files, supress error messages
-- search pattern_to_search in all c files located in the current directory
-	grep -lr --include=*.{c,h} pattern_to_search .
+	:grep -rl . --include=*.py -e "text"
+									- search text in all py files recursively, 
+									  list file names only
+	:grep -rnw . --include=*.py -e "text"
+									- search text in all py files recursively,
+									  list files, with line nuber and text
+
 	copen, cclose		- open searched files
 	cn, cp			- next, previous
 
@@ -158,6 +161,9 @@ install ctags by: sudo apt-get install exuberant-ctags
 - on ubuntu ack is installed as ack-grep (sudo apt-get install ack-grep)
 - add: alias ack='ack-grep' to .bashrc
 - ack --help types
+
+## Grep in Vim
+grep 'text' **/*.c							- search in all c files in all dirs
 
 ## Vundle
 PluginInstall		- installs a plugin when added to .vimrc file

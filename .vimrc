@@ -5,7 +5,8 @@ call vundle#rc()
 " vundle managed plugins
 
 " just provides airline
-Plugin 'vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " left side file explorer
 Plugin 'scrooloose/nerdtree'
  "right side variables, functions navigator
