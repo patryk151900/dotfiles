@@ -1,21 +1,21 @@
 " Unmap the arrow keys
-no <down> <Nop>
-no <left> <Nop>
-no <right> <Nop>
-no <up> <Nop>
-ino <down> <Nop>
-ino <left> <Nop>
-ino <right> <Nop>
-ino <up> <Nop>
-vno <down> <Nop>
-vno <left> <Nop>
-vno <right> <Nop>
-vno <up> <Nop>
-
-map <up> :resize +1<CR>
-map <down> :resize -1<CR>
-map <right> :vertical resize +1<CR>
-map <left> :vertical resize -1<CR>
+"no <down> <Nop>
+"no <left> <Nop>
+"no <right> <Nop>
+"no <up> <Nop>
+"ino <down> <Nop>
+"ino <left> <Nop>
+"ino <right> <Nop>
+"ino <up> <Nop>
+"vno <down> <Nop>
+"vno <left> <Nop>
+"vno <right> <Nop>
+"vno <up> <Nop>
+"
+"map <up> :resize +1<CR>
+"map <down> :resize -1<CR>
+"map <right> :vertical resize +1<CR>
+"map <left> :vertical resize -1<CR>
 
 "nerd tree operation
 map <C-h> :call PreviousBuffer()<CR>
@@ -36,6 +36,7 @@ nmap <leader>hl :e ~/.knowledge/linux.md<CR>
 nmap <leader>hp :e ~/.knowledge/linux_programming.md<CR>
 nmap <leader>hc :e ~/.knowledge/c.md<CR>
 nmap <leader>hg :e ~/.knowledge/git.md<CR>
+nmap <leader>ht :e ~/.knowledge/tmux.md<CR>
 
 "show file path
 map <leader>p  :echo expand('%:p')<CR>
@@ -54,7 +55,7 @@ map <leader><F11> :make test_single<CR>
 map <leader><F12> :make test_all<CR>
 
 "Python execution
-autocmd BufEnter,BufNew *.py map <leader><F8> :!python % <CR>
+autocmd BufEnter,BufNew *.py map <leader><F8> :!python % 0x5 bitwise.txt<CR>
 
 "Lusty buffer
 nmap <leader>B :LustyBufferExplorer<CR>
@@ -84,5 +85,11 @@ nmap <leader>w :set wrap!<CR>
 "highlight search
 nmap <leader>l :set hlsearch!<CR>
 
+"put timestamp
+nmap <leader>t :put =strftime('%Y-%m-%d  %H:%M')<CR>
+ 
 "DoxygenToolkit
 nmap <leader>d :Dox<CR>
+
+"load work workspace (gvim on work laptop)
+nmap <leader>e :so c:\_bbb\eknowledge\session.vim<CR>

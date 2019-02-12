@@ -5,6 +5,9 @@
 ~/.vim/startup/settings.vim
 
 # Misc, short
+vim -u NONE			- start vim with no .vimrc
+vim -u .vimrc1		- start vim with different .vimrc file
+echo 'text' | vim - - edit stream / pipe redirection
 :set hlsearch!		- enables highlight for searched tags
 :nohighlight		- switches off current highlight
 :set cc=80			- inserts vertical color column
@@ -16,6 +19,7 @@ g Ctrl g			- display char count in v mode
 Ctrl+R "			- paste to vim command line
 :<, >s/^..//		- deleted first 2 chars in each line in v-block
 /,$s/<find>/<replace>/gci	- search/replace from cursor, confirmation, match case
+/text1\|text2\		- search for text1 and text2 at the same time
 bufdo bd			- close all buffers
 :echo @%			- current file path
 :read !find <dir>	- insert output of the find commnad to the current buffer
@@ -31,19 +35,39 @@ bufdo bd			- close all buffers
 	:e ++ff=dos
 	:w
 
+# replace newline with comma
+:%s/\n/,/g
+
+# execute command on each ocurracne of word
+:g/^word \d:/{COMMANDS}
+
+# delete lines matching
+:g/pattern/d
+
+:let i = 1 | g/^Level \d:/s/^text/text\=printf("%02d ", i)/ | let i = i+1
+
+# regex, search, match
+/| *[-+][0-9] *|$			- search for |   +1 | where +- is optional
+
+# regex multiline non greedy search
+/first\_.\{-}last
+
 # hex to decimal, decimal to hex
 :echo 0x26					- will display 38
 :echo printf("%d", 0x26)	- displays 38
 :echo printf("%x", 38)		- displays 26
 
-# greping files
+# grepping files
 	:grep -rl . --include=*.py -e "text"
-									- search text in all py files recursively, 
-									  list file names only
+																   - search text in all py files recursively,
+																	 list file names only
 	:grep -rnw . --include=*.py -e "text"
-									- search text in all py files recursively,
-									  list files, with line nuber and text
-
+																   - search text in all py files recursively,
+																	 list files, with line nuber and text
+	grep				- find files
+	grep -s				- find files, supress error messages
+- search pattern_to_search in all c files located in the current directory
+	grep -lr --include=*.{c,h} pattern_to_search .
 	copen, cclose		- open searched files
 	cn, cp			- next, previous
 
@@ -64,6 +88,7 @@ bufdo bd			- close all buffers
 	- ] for tag
 	- f for file
 	- etc.
+ 2018-07-10 09:12:15.620396 |  3 | 928| 7|10177|        | -121.7 |    |        | -15 | Y |  QPSK |   | 2 |  46 |  47 | N |    |    72 |  |       |   |                  |                  | DTX|       7 |        |        |
 
 # window operations
 - C-W			window prefix
@@ -115,9 +140,19 @@ bufdo bd			- close all buffers
 - to set/fix parenthesis matching - add this to config file¬
 ›   hi MatchParen guifg=#000000 ctermfg=0 guibg=#FD971F ctermbg=green¬
 - runtime syntax/colortest.vim - check available colors¬
+- runtime syntax/colortest.vim - check available colors¬
+
+# color tips¬
 - to set/fix parenthesis matching - add this to config file¬
 ›   hi MatchParen guifg=#000000 ctermfg=0 guibg=#FD971F ctermbg=green¬
 - runtime syntax/colortest.vim - check available colors¬
+- to set/fix parenthesis matching - add this to config file¬
+›   hi MatchParen guifg=#000000 ctermfg=0 guibg=#FD971F ctermbg=green¬
+- runtime syntax/colortest.vim - check available colors¬
+
+# set syntax for a file with odd/no extension
+	:set syntax=sh
+	:set syntax=html
 - 
 # plugins short manual
 
@@ -216,7 +251,7 @@ PluginInstall		- installs a plugin when added to .vimrc file
 - in order to see airline symbols in console vim set the right font in terminal settings - from this time you should see new symbols in vim
 - do not configure symbols in .vimrc - this is necessary only if you like to replace default symbolsnsta
 
-#installation on Windows
+# installation on Windows
 - clone dotfiles repo:
 	mklink /D %HOMEPATH%\.vim\startup c:\repos\dotfiles\.vim\startup
 	mklink /D %HOMEPATH%\.vim\colors c:\repos\dotfiles\.vim\colors
