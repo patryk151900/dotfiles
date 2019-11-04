@@ -23,8 +23,11 @@ Ctrl+R "			- paste to vim command line
 bufdo bd			- close all buffers
 :echo @%			- current file path
 :read !find <dir>	- insert output of the find commnad to the current buffer
+:put= printf('0x%x', 255) - insert output of the find commnad to the current buffer
 :set ft?			- read detected file type
 :cexpr system('ls -ahl') | copen	- open command output in quickfix
+:reg				- show registers
+:h feature-list		- display feature list vim is comiled with
 
 # dos/unix conversion
 - to unix
@@ -47,10 +50,15 @@ bufdo bd			- close all buffers
 :let i = 1 | g/^Level \d:/s/^text/text\=printf("%02d ", i)/ | let i = i+1
 
 # regex, search, match
+\v, meaning that in the pattern after it all ASCII characters except '0'-'9', 'a'-'z', 'A'-'Z' and '_' have a special meaning
+
 /| *[-+][0-9] *|$			- search for |   +1 | where +- is optional
 
-# regex multiline non greedy search
+# regex multiline non greedy search - .\{-}
 /first\_.\{-}last
+
+# remove trailing spaces
+s/\v(.{-}) *$/\1/			- remove trailing spaces
 
 # hex to decimal, decimal to hex
 :echo 0x26					- will display 38
@@ -58,6 +66,12 @@ bufdo bd			- close all buffers
 :echo printf("%x", 38)		- displays 26
 
 # grepping files
+	:vimgrep - internal grep, slower, works with quickfix
+	:lgrep - works with location list
+	:grep - external grep, quicker, does not work with quickfix
+	:vimgrep pattern **
+	:vimgrep pattern **/*.c
+	:vimgrep -R pattern *.c
 	:grep -rl . --include=*.py -e "text"
 																   - search text in all py files recursively,
 																	 list file names only
@@ -70,6 +84,8 @@ bufdo bd			- close all buffers
 	grep -lr --include=*.{c,h} pattern_to_search .
 	copen, cclose		- open searched files
 	cn, cp			- next, previous
+
+
 
 # compiling files
 - see ~/.vim/startup/mappings.vim

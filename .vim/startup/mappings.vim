@@ -38,8 +38,11 @@ nmap <leader>hc :e ~/.knowledge/c.md<CR>
 nmap <leader>hg :e ~/.knowledge/git.md<CR>
 nmap <leader>ht :e ~/.knowledge/tmux.md<CR>
 
-"show file path
-map <leader>p  :echo expand('%:p')<CR>
+"show file path and copy to clipboard
+map <leader>p :echo expand('%:p') <bar> :let @* = expand("%:p") <CR>
+
+"convert file format to unix
+map <leader>u :e ++ff=dos <bar> :setlocal ff=unix<CR>
 
 "make clang format
 map <leader>f  :ClangFormat<CR>
