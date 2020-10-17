@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# This script installs dotfiles in user home directory
+#
+# !!! It must be run from dotfiles directory !!!
+#
+
 # get path to itself
 SCRIPT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
 SCRIPT_PATH=$(dirname $SCRIPT)
@@ -7,7 +12,9 @@ SCRIPT_PATH=$(dirname $SCRIPT)
 # store timestamp based sufix for backed up files
 TIMESTAMP="$(date +%s)"
 
-# $1 - file to back up
+# brief: backs up a file; extends the name with timestamp suffix
+# parameters:
+#     $1 - file to back up
 function backup_orig_file {
 	if [ -e $1 ]
 		then
@@ -18,9 +25,12 @@ function backup_orig_file {
 	fi
 }
 
-# $1 - target directory
-# $2 - target file name
-# $3 - source file name (relative to script path == main of dotfiles repo)
+
+# brief: installs the file as symbolic link; backs up original file
+# parameters:
+#    $1 - target directory
+#    $2 - target file name
+#    $3 - source file name (relative to script path == main of dotfiles repo)
 function install_file {
 	echo "Installing $2..."
 	if [ ! -L $1/$2 ]
@@ -33,6 +43,7 @@ function install_file {
 	fi
 }
 
+# do actual installation
 echo "Starting installation of dot files..."
 
 # vim
@@ -45,6 +56,9 @@ install_file ~ .tmux.conf .tmux.conf
 # bashrc
 install_file ~ .bashrc .bashrc_virtual_ubuntu_work
 
+# install bash aliasses
+install_file ~ .bash_aliases .bash_aliases
+
 # clone vundle
 VUNDLE=~/.vim/bundle/vundle
 echo "Clonning vundle repo into $vundle..."
@@ -54,4 +68,4 @@ else
 	git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/vundle
 fi
 
-echo "installation completed..."
+echo "Installation completed!"
