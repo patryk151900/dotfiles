@@ -29,6 +29,9 @@ bufdo bd			- close all buffers
 :reg				- show registers
 :h feature-list		- display feature list vim is comiled with
 
+# check current rc file
+echo $MYVIMRC
+
 # dos/unix conversion
 - to unix
 	:e ++ff=dos
@@ -45,7 +48,10 @@ bufdo bd			- close all buffers
 :g/^word \d:/{COMMANDS}
 
 # delete lines matching
-:g/pattern/d
+:%g/pattern/d
+
+# leave only lines matching
+:%g!/pattern/d
 
 :let i = 1 | g/^Level \d:/s/^text/text\=printf("%02d ", i)/ | let i = i+1
 
@@ -274,6 +280,12 @@ PluginInstall		- installs a plugin when added to .vimrc file
 	mklink /D %HOMEPATH%\.knowledge c:\repos\knowledge
 	mklink %HOMEPATH%\.vim\readme.md c:\repos\dotfiles\.vim\readme.md
 	mklink %HOMEPATH%\_vimrc c:\repos\dotfiles\.vimrc
+- vim on Windows searches vimrc files in (more on this in :help vimrc):
+		Unix		$HOME/.vimrc or $HOME/.vim/vimrc
+		MS-Windows	$HOME/_vimrc, $HOME/vimfiles/vimrc or $VIM/_vimrc
+- so make sure you set HOME to your user profile:
+	printenv HOME
+	setx HOME "%USERPROFILE%"
 - (needed by vundle) in git folder\cmd add curl.cmd with content:
 	@rem Do not use "echo off" to not affect any child calls.
 	@setlocal
