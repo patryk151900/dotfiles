@@ -66,6 +66,9 @@ echo $MYVIMRC
 # remove trailing spaces
 s/\v(.{-}) *$/\1/			- remove trailing spaces
 
+# remove new line character and make single line
+s/\n//
+
 # hex to decimal, decimal to hex
 :echo 0x26					- will display 38
 :echo printf("%d", 0x26)	- displays 38
@@ -273,19 +276,28 @@ PluginInstall		- installs a plugin when added to .vimrc file
 - in order to see airline symbols in console vim set the right font in terminal settings - from this time you should see new symbols in vim
 - do not configure symbols in .vimrc - this is necessary only if you like to replace default symbolsnsta
 
-# installation on Windows
-- clone dotfiles repo:
-	mklink /D %HOMEPATH%\.vim\startup c:\repos\dotfiles\.vim\startup
-	mklink /D %HOMEPATH%\.vim\colors c:\repos\dotfiles\.vim\colors
-	mklink /D %HOMEPATH%\.knowledge c:\repos\knowledge
-	mklink %HOMEPATH%\.vim\readme.md c:\repos\dotfiles\.vim\readme.md
-	mklink %HOMEPATH%\_vimrc c:\repos\dotfiles\.vimrc
+# win installation, windows installation
+- vim on Windows searches user vim files/folders in ~/vimfiles by default instead of ~/.vim
+-- check :help rtp for details
+-- to check it run :echo &rtp
+-- to make vim work with existing .vim folder following line needs to be added to .vimrc:
+	set rtp+=~/.vim
 - vim on Windows searches vimrc files in (more on this in :help vimrc):
-		Unix		$HOME/.vimrc or $HOME/.vim/vimrc
-		MS-Windows	$HOME/_vimrc, $HOME/vimfiles/vimrc or $VIM/_vimrc
-- so make sure you set HOME to your user profile:
+	Unix		$HOME/.vimrc or $HOME/.vim/vimrc
+	MS-Windows	$HOME/_vimrc, $HOME/vimfiles/vimrc or $VIM/_vimrc
+-- set HOME to your user profile:
 	printenv HOME
 	setx HOME "%USERPROFILE%"
+- link files/folders from dotfiles repo:
+	mklink /D %HOME%\.vim\startup c:\repos\dotfiles\.vim\startup
+	mklink /D %HOME%\.vim\colors c:\repos\dotfiles\.vim\colors
+	mklink /D %HOME%\.knowledge c:\repos\knowledge
+	mklink %HOME%\.vim\readme.md c:\repos\dotfiles\.vim\readme.md
+	mklink %HOME%\_vimrc c:\repos\dotfiles\.vimrc
+	# this one is needed only for easy access from .vim/readme.md
+	mklink %HOME%\.vimrc c:\repos\dotfiles\.vimrc
+- open git bash and clone vundle (~ should be resolved properly):
+    git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/vundle
 - (needed by vundle) in git folder\cmd add curl.cmd with content:
 	@rem Do not use "echo off" to not affect any child calls.
 	@setlocal
@@ -301,6 +313,7 @@ PluginInstall		- installs a plugin when added to .vimrc file
 
 	@curl.exe %*
 - run vim and run PluginInstall
+- restart vim - no errors should be visible and plugins should work
 
 # vim compilation from scratch
 - sudo apt-get install ruby-dev python-dev

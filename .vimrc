@@ -1,4 +1,9 @@
 set nocompatible
+" this is for Win as default is vimfiles and we want to use .vim
+" for Linux/Max it should change nothing as the path will already be added
+set rtp+=~/.vim
+
+" run vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
