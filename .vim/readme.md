@@ -314,6 +314,8 @@ PluginInstall		- installs a plugin when added to .vimrc file
 	@curl.exe %*
 - run vim and run PluginInstall
 - restart vim - no errors should be visible and plugins should work
+- when running from other tools (e.g. totalcmd) to open files in same gvim instance in different tab use command:
+	"C:\Program Files\Vim\vim82\gvim.exe" --remote-silent
 
 # vim compilation from scratch
 - sudo apt-get install ruby-dev python-dev
