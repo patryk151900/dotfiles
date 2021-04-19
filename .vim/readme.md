@@ -173,18 +173,16 @@ s/\n//
 - Insert mode + ^V172	- will insert char under 172 number
 
 # color tips¬
-- to set/fix parenthesis matching - add this to config file¬
-›   hi MatchParen guifg=#000000 ctermfg=0 guibg=#FD971F ctermbg=green¬
 - runtime syntax/colortest.vim - check available colors¬
 - runtime syntax/colortest.vim - check available colors¬
 
-# color tips¬
-- to set/fix parenthesis matching - add this to config file¬
-›   hi MatchParen guifg=#000000 ctermfg=0 guibg=#FD971F ctermbg=green¬
-- runtime syntax/colortest.vim - check available colors¬
-- to set/fix parenthesis matching - add this to config file¬
-›   hi MatchParen guifg=#000000 ctermfg=0 guibg=#FD971F ctermbg=green¬
-- runtime syntax/colortest.vim - check available colors¬
+# fix parenthesis matching
+- the default matching, when having "block" coursor is that whne reaching first parenthesis the coursor/highlight "jumps" to 
+   the next one and then first parenthesis gots coursor but blinking - the issue is that blinking starts from blank coursor 
+   which confuses the user as if the coursor "jumped" to next matching
+- the easiest solution is to change coursor shape in terminal settings from block to I-beam - then both parenthesis get
+   solid block highlight right from beginning and only I-beam caret is blinking
+- the benefit is that you still have matching parenthesis highlight which is very useful
 
 # set syntax for a file with odd/no extension
 	:set syntax=sh
