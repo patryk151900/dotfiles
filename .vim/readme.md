@@ -28,6 +28,17 @@ bufdo bd			- close all buffers
 :cexpr system('ls -ahl') | copen	- open command output in quickfix
 :reg				- show registers
 :h feature-list		- display feature list vim is comiled with
+%					- jump between matching parenthesis
+
+# session save/read
+- save current session, if no file provided Session.vim is used:
+	:mksession
+	:mksession s.vim
+	:mksession! s.vim              - overwrite previous session
+- start vim with saved session:
+	vim -S Session.vim
+- load vim session
+	:source Session.vim
 
 # check current rc file
 echo $MYVIMRC

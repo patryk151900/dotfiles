@@ -94,5 +94,10 @@ nmap <leader>t :put =strftime('%Y-%m-%d  %H:%M')<CR>
 "DoxygenToolkit
 nmap <leader>d :Dox<CR>
 
+" save/read session to current dir
+nmap <leader>sw :mksession! session.vim<CR>
+nmap <leader>sr :so session.vim<CR>
+
 "load work workspace (gvim on work laptop)
 nmap <leader>e :so c:\_bbb\eknowledge\session.vim<CR>
+

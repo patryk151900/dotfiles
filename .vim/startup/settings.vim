@@ -90,6 +90,8 @@ set undodir=$HOME/.vim/undo
 
 set undolevels=1000
 set undoreload=10000
+"set minimal set of data to be stored by mksession
+set sessionoptions=curdir,buffers
 
 if version > 720
 	set undofile
