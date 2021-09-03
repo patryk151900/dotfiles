@@ -25,10 +25,12 @@ bufdo bd			- close all buffers
 :read !find <dir>	- insert output of the find commnad to the current buffer
 :put= printf('0x%x', 255) - insert output of the find commnad to the current buffer
 :set ft?			- read detected file type
+:set syntax=json    - sets appropriate file syntax
 :cexpr system('ls -ahl') | copen	- open command output in quickfix
 :reg				- show registers
 :h feature-list		- display feature list vim is comiled with
 %					- jump between matching parenthesis
+ctrl+N              - hint - known variable names
 
 # session save/read
 - save current session, if no file provided Session.vim is used:
@@ -133,6 +135,8 @@ s/\n//
 - C-Whjkl		navigation
 
 # vimdiff comparing files
+- compare files and output into diff.html:
+vimdiff  file1.txt file2.txt -c TOhtml -c 'w! diff.html' -c 'qa!'
 - diffthis		on file to mark file for diff,
 				the same on anoter file
 - diffoff		to end diff

@@ -115,7 +115,13 @@ let g:NERDTreeDirArrowCollapsible = '~'
 
 "airline settings
 "set guifont=Droid\ Sans\ Mono\ for\ Powerline:10
-set guifont=DejaVu_Sans_Mono_for_Powerline:h10
+" this is needed additionally on Win10 for GVIM - for a reason it does not
+" use guifont setting from earlier setting
+if has("gui_running")
+	set guifont=Consolas:h11:cEASTEUROPE     "bigger fonts for 4K display
+else
+	set guifont=DejaVu_Sans_Mono_for_Powerline:h10
+endif
 let g:Powerline_symbols = 'fancy'
 let g:airline_powerline_fonts = 0	" 1 if to use special al/pl fonts
 if g:airline_powerline_fonts == 0
