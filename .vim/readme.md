@@ -336,6 +336,10 @@ PluginInstall		- installs a plugin when added to .vimrc file
 - hash vim						- when new vim is not visible
 
 # quick getting of rubby and python supported version
+sudo apt install vim-gtk
+sudo apt install vim-gnome
+or
+!!! vim-nox - has no clipboard support
 sudo atp-get install vim-nox (this will add rubby support needed for LustyExplorer buffer)
 
 # knowledge cheatsheets installation
