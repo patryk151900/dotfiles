@@ -29,8 +29,14 @@ bufdo bd			- close all buffers
 :cexpr system('ls -ahl') | copen	- open command output in quickfix
 :reg				- show registers
 :h feature-list		- display feature list vim is comiled with
+[[					- jump to begining of current method
+]]					- jump next method
+[{                  - jump to nearest matching {
+]}                  - jump to nearest matching } 
+[(                  - jump to nearest matching (
+])                  - jump to nearest matching ) 
 %					- jump between matching parenthesis
-ctrl+N              - hint - known variable names
+ctrl+N              - hint known variable names
 
 # session save/read
 - save current session, if no file provided Session.vim is used:
